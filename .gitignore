@@ -1,0 +1,15 @@
+**/.env
+**/.venv/
+**/venv/
+**/__pycache__/
+**/.pytest_cache/
+**/*.py[cod]
+**/*.log
+
+# Generated reports, PDFs, previews, cache files, and private deck cases
+DD_app/outputs/*
+!DD_app/outputs/.gitkeep
+mca_strategic_review_agent/outputs/*
+!mca_strategic_review_agent/outputs/.gitkeep
+mca_strategic_review_agent/cases/*
+!mca_strategic_review_agent/cases/.gitkeep

@@ -1,0 +1,6 @@
+.env
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+outputs/company_dd_app_server*.log

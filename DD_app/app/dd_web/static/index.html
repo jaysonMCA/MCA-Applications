@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MCA Company DD</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <aside class="sidebar">
+        <div class="brand">
+          <span class="mark">MCA</span>
+          <div>
+            <h1>Company DD</h1>
+            <p id="status">Checking automation...</p>
+          </div>
+        </div>
+
+        <form id="dd-form" class="form">
+          <label>
+            Company
+            <input id="company" name="company" placeholder="Anthropic" required />
+          </label>
+          <label>
+            Official website
+            <input id="website" name="website" placeholder="https://www.anthropic.com" />
+          </label>
+          <label>
+            LinkedIn or X
+            <input id="profile" name="profile" placeholder="https://www.linkedin.com/company/..." />
+          </label>
+          <div class="grid-two">
+            <label>
+              Region
+              <input id="region" name="region" placeholder="US / Canada" />
+            </label>
+            <label>
+              Sector
+              <input id="sector" name="sector" placeholder="AI / Web3 / Fintech" />
+            </label>
+          </div>
+          <label>
+            Call context
+            <textarea id="call_context" name="call_context" rows="3" placeholder="Why MCA is speaking with them"></textarea>
+          </label>
+          <label>
+            Notes
+            <textarea id="supplied_notes" name="supplied_notes" rows="5" placeholder="Paste deck notes, transcript snippets, investor context, or known concerns"></textarea>
+          </label>
+          <button id="submit" type="submit">Generate DD</button>
+        </form>
+
+        <section class="history">
+          <div class="section-title">
+            <h2>History</h2>
+            <button id="clear-history" type="button">Clear</button>
+          </div>
+          <div id="history-list" class="history-list"></div>
+        </section>
+      </aside>
+
+      <section class="workspace">
+        <div class="toolbar">
+          <div>
+            <h2 id="report-title">Ready</h2>
+            <p id="report-meta">Enter a company and run the DD workflow.</p>
+          </div>
+          <div class="actions">
+            <button id="copy-report" type="button" disabled>Copy report</button>
+            <button id="download-pdf" type="button" disabled>PDF</button>
+            <button id="download-md" type="button" disabled>Markdown</button>
+            <button id="download-json" type="button" disabled>Evidence JSON</button>
+          </div>
+        </div>
+
+        <div id="notice" class="notice hidden"></div>
+
+        <div class="tabs">
+          <button class="tab active" data-tab="report">Report</button>
+          <button class="tab" data-tab="evidence">Evidence</button>
+          <button class="tab" data-tab="prompt">Research Prompt</button>
+        </div>
+
+        <div class="panel">
+          <textarea id="report" class="output active" data-panel="report" spellcheck="false"></textarea>
+          <textarea id="evidence" class="output" data-panel="evidence" spellcheck="false"></textarea>
+          <textarea id="prompt" class="output" data-panel="prompt" spellcheck="false"></textarea>
+        </div>
+      </section>
+    </main>
+    <script src="/static/main.js"></script>
+  </body>
+</html>
